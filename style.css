@@ -6,9 +6,8 @@
 }
 
 body {
-    background: #0a0a0a;
+    background: #05070d;
     color: white;
-    line-height: 1.6;
 }
 
 /* NAVBAR */
@@ -18,9 +17,16 @@ body {
     padding: 20px 60px;
     position: sticky;
     top: 0;
-    z-index: 1000;
-    background: rgba(10,10,10,0.6);
+    background: rgba(5,7,13,0.7);
     backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.4rem;
+    background: linear-gradient(90deg, #4facfe, #a259ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .navbar a {
@@ -34,16 +40,11 @@ body {
     color: white;
 }
 
-.logo {
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
 .cta-nav {
-    background: linear-gradient(135deg, #ffffff, #cfcfcf);
-    color: black;
-    padding: 8px 14px;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #4facfe, #a259ff);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
 }
 
 /* HERO */
@@ -52,13 +53,41 @@ body {
     display: flex;
     align-items: center;
     padding: 0 60px;
-    background: radial-gradient(circle at 20% 20%, #1a1a1a, #0a0a0a);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow background effect */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(79,172,254,0.4), transparent 70%);
+    top: -100px;
+    left: -100px;
+    filter: blur(100px);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(162,89,255,0.4), transparent 70%);
+    bottom: -100px;
+    right: -100px;
+    filter: blur(100px);
 }
 
 .hero h1 {
-    font-size: 4rem;
-    max-width: 700px;
-    background: linear-gradient(90deg, #fff, #999);
+    font-size: 4.2rem;
+    max-width: 800px;
+    line-height: 1.1;
+}
+
+.hero .gradient-text {
+    background: linear-gradient(90deg, #4facfe, #a259ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -67,15 +96,17 @@ body {
     margin-top: 20px;
     color: #bbb;
     font-size: 1.2rem;
+    max-width: 600px;
 }
 
+/* BUTTONS */
 .btn {
     display: inline-block;
     margin-top: 30px;
     padding: 14px 28px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #ffffff, #dcdcdc);
-    color: black;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4facfe, #a259ff);
+    color: white;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
@@ -83,10 +114,16 @@ body {
 
 .btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    box-shadow: 0 0 25px rgba(79,172,254,0.5);
 }
 
-/* SECTIONS */
+.btn-secondary {
+    margin-left: 15px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* SECTION */
 .section {
     padding: 120px 60px;
 }
@@ -99,8 +136,8 @@ body {
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    margin-top: 40px;
     gap: 30px;
+    margin-top: 40px;
 }
 
 .card {
@@ -113,53 +150,14 @@ body {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 25px rgba(255,255,255,0.1);
-}
-
-/* FORM */
-form {
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input, textarea {
-    padding: 14px;
-    border-radius: 10px;
-    border: none;
-    background: #111;
-    color: white;
-}
-
-button {
-    padding: 14px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #fff, #ccc);
-    border: none;
-    cursor: pointer;
+    box-shadow: 0 0 30px rgba(162,89,255,0.2);
 }
 
 /* FOOTER */
 footer {
     text-align: center;
     padding: 40px;
-    background: black;
-    margin-top: 50px;
-}
-
-/* SCROLL ANIMATION */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    background: #03040a;
 }
 
 /* MOBILE */
@@ -177,4 +175,4 @@ footer {
     .section {
         padding: 80px 20px;
     }
-} 
+}
