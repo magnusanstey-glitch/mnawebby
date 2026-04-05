@@ -8,6 +8,7 @@
 body {
     background: #0b0b0b;
     color: #fff;
+    line-height: 1.6;
 }
 
 /* NAVBAR */
@@ -24,11 +25,15 @@ body {
 .navbar a {
     margin-left: 20px;
     text-decoration: none;
-    color: #ddd;
+    color: #ccc;
 }
 
 .navbar a:hover {
-    color: #fff;
+    color: white;
+}
+
+.logo {
+    font-weight: bold;
 }
 
 .cta-nav {
@@ -49,7 +54,7 @@ body {
 
 .hero h1 {
     font-size: 3.5rem;
-    max-width: 600px;
+    max-width: 700px;
 }
 
 .hero p {
@@ -80,7 +85,7 @@ body {
     background: #121212;
 }
 
-/* CARDS */
+/* GRID */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -90,21 +95,21 @@ body {
 
 .card {
     background: #1c1c1c;
-    padding: 40px;
+    padding: 30px;
     border-radius: 16px;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
 }
 
 /* FORM */
 form {
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 400px;
 }
 
 input, textarea {
