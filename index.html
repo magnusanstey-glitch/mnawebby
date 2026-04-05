@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MNAWebbyrå</title>
-  <style>
-    body { font-family: Arial; margin:0; background:#0f172a; color:white; }
-    header, footer { background:#020617; padding:20px; text-align:center; }
-    nav a { margin:0 10px; color:#38bdf8; text-decoration:none; }
-    .container { padding:40px; max-width:900px; margin:auto; }
-    h1, h2 { color:#38bdf8; }
-    .btn { background:#38bdf8; padding:10px 20px; color:black; text-decoration:none; }
-  </style>
+<meta charset="UTF-8">
+<title>MNA Webbyrå</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>MNA-Webbyrå</h1>
-  <nav>
-    <a href="about.html">Om oss</a>
-    <a href="team.html">Team</a>
-    <a href="reviews.html">Recensioner</a>
-    <a href="contact.html">Kontakt</a>
-  </nav>
+
+<header class="navbar">
+    <div class="logo">MNA Webbyrå</div>
+    <nav>
+        <a href="index.html">Hem</a>
+        <a href="about.html">Om oss</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html" class="cta-nav">Kontakt</a>
+    </nav>
 </header>
 
-<div class="container">
-  <h2>Professionell webbutveckling i Malmö</h2>
-  <p>Vi är en pålitlig och erfaren leverantör av tjänster och produkter av högsta kvalitet med fokus på kundnöjdhet och individuell service.</p>
-  <p>Vårt mål är att alltid leverera det bästa till våra kunder.</p>
-  <a class="btn" href="contact.html">Kontakta oss</a>
-</div>
+
+<section class="hero">
+    <div>
+        <h1>Vi bygger hemsidor som säljer.</h1>
+        <p>Modern design. Riktiga resultat.</p>
+        <a href="contact.html" class="btn">Kom igång</a>
+    </div>
+</section>
+
+
+<section class="section">
+    <h2>Tjänster</h2>
+    <div class="cards">
+        <div class="card">Webbutveckling</div>
+        <div class="card">SEO</div>
+        <div class="card">Design</div>
+    </div>
+</section>
 
 <footer>
-  <p>© 2026 MNA-Webbyrå</p>
+    <p>© 2026 MNA Webbyrå</p>
 </footer>
 
 </body>
