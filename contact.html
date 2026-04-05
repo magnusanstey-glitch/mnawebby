@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <title>Kontakt</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Kontakta oss</h1>
 
-<p>MNA-Webbyrå</p>
-<p>Gerlachgatan 6A, Malmö</p>
-<p>072 517 30 24</p>
-<p>kontakt@kaizenflow.se</p>
+<header class="navbar">
+    <div class="logo">MNA Webbyrå</div>
+    <nav>
+        <a href="index.html">Hem</a>
+        <a href="about.html">Om oss</a>
+        <a href="services.html">Tjänster</a>
+        <a href="reviews.html">Recensioner</a> 
+        <a href="contact.html" class="cta-nav">Kontakt</a>
+    </nav>
+</header>
 
-<h2>Kontaktformulär</h2>
-<form>
-  <input placeholder="Fullständigt namn"><br><br>
-  <input placeholder="E-post"><br><br>
-  <textarea placeholder="Meddelande"></textarea><br><br>
-  <button>Skicka</button>
-</form>
+<section class="section">
+    <h2>Kontakta oss</h2>
 
-<a href="index.html">Tillbaka</a>
+    <p>Gerlachgatan 6A, Malmö</p>
+
+    <form>
+        <input type="text" placeholder="Ditt namn">
+        <input type="email" placeholder="din@epost.se">
+        <textarea placeholder="Berätta om ditt projekt"></textarea>
+        <button>Skicka</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 MNA Webbyrå</p>
+</footer>
+
 </body>
 </html>
