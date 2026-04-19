@@ -35,6 +35,8 @@ nav {
 }
 nav .logo {
   height: 40px;
+  display: block;
+  margin: 0 auto;
 }
 nav .nav-links {
   display: flex;
