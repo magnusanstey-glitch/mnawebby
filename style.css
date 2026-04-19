@@ -33,11 +33,16 @@ nav {
   top: 0;
   z-index: 10;
 }
-nav .logo {
-  height: 40px;
-  display: block;
-  margin: 0 auto;
+.container {
+  display: flex;
+  justify-content: center;  
+  align-items: center;     
+  height: 100vh;            
 }
+
+.logo {
+  width: 150px; 
+} 
 nav .nav-links {
   display: flex;
   align-items: center;
