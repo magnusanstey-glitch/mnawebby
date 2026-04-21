@@ -13,6 +13,7 @@
 <body>
 
 <nav>
+  <div class="menu-toggle" id="menu-toggle">☰</div>
   <a href="index.html"><img src="Skärmavbild 2026-03-15 kl. 13.30.47.png" alt="MNA Webbyrå logga" class="logo"/></a>
   <div class="nav-links">
     <a href="index.html">Hem</a>
@@ -69,8 +70,15 @@
 <footer>
   <p>© MNA Webbyrå – Malmö | Gerlachgatan 6A, 212 19 Malmö | kontakt@kaizenflow.se | 072 517 30 24</p>
 </footer>
+  
+const toggle = document.getElementById("menu-toggle");
+const nav = document.querySelector(".nav-links");
 
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
 <script src="script.js"></script>
+
 </body>
 </html>
 
