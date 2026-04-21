@@ -61,13 +61,3 @@ gsap.from(".contact-container", {
   y: 30,
   duration: 1
 });
-
-  
-const toggle = document.getElementById("menu-toggle");
-const nav = document.querySelector(".nav-links");
-
-toggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
-});
-
-
