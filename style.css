@@ -298,6 +298,7 @@ footer {
   nav .nav-links {
     position: absolute;
     top: 60px;
+    z-index: 999;
     left: 0;
     width: 100%;
     background: rgba(0,0,0,0.95);
