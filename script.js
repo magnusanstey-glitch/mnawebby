@@ -1,5 +1,4 @@
- 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
  
   // ---------- Mobile Nav ----------
   const navToggle = document.querySelector('.nav-toggle');
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
  
-    // Close on link click
     navLinks.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         navLinks.classList.remove('open');
@@ -31,12 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
  
-  // ---------- Scroll Fade-in ----------
-  const fadeEls = document.querySelectorAll('.fade-in');
+  // ---------- Scroll Fade-in (ENDAST för element som INTE animeras av GSAP) ----------
+  // Team-member och testimonial sköts av GSAP nedan – ta INTE med dem här
+  const fadeEls = document.querySelectorAll(
+    '.fade-in:not(.team-member):not(.testimonial):not(.card):not(.trust-item)'
+  );
  
   if (fadeEls.length) {
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add('visible');
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
  
     fadeEls.forEach((el, i) => {
       if (!el.dataset.delay) el.dataset.delay = i * 80;
@@ -52,52 +53,75 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
  
-  // ---------- GSAP Animations (if available) ----------
+  // ---------- GSAP Animations ----------
   if (typeof gsap !== 'undefined') {
-    // Hero entrance
-    gsap.from('.hero-badge', { opacity: 0, y: 20, duration: 0.7, ease: 'power3.out', delay: 0.2 });
-    gsap.from('.hero h1',    { opacity: 0, y: 30, duration: 0.8, ease: 'power3.out', delay: 0.4 });
-    gsap.from('.hero p',     { opacity: 0, y: 20, duration: 0.7, ease: 'power3.out', delay: 0.6 });
-    gsap.from('.cta',        { opacity: 0, y: 20, duration: 0.7, ease: 'power3.out', delay: 0.75 });
  
-    // Hero sub-page entrance
-    gsap.from('.hero-sub h1', { opacity: 0, y: 30, duration: 0.8, ease: 'power3.out', delay: 0.3 });
-    gsap.from('.hero-sub p',  { opacity: 0, y: 20, duration: 0.7, ease: 'power3.out', delay: 0.5 });
+    // Hero startsida
+    if (document.querySelector('.hero')) {
+      gsap.from('.hero-badge', { opacity: 0, y: 20, duration: 0.7, ease: 'power3.out', delay: 0.2 });
+      gsap.from('.hero h1',    { opacity: 0, y: 30, duration: 0.8, ease: 'power3.out', delay: 0.35 });
+      gsap.from('.hero p',     { opacity: 0, y: 20, duration: 0.7, ease: 'power3.out', delay: 0.5 });
+      gsap.from('.cta',        { opacity: 0, y: 20, duration: 0.7, ease: 'power3.out', delay: 0.65 });
+    }
  
-    // Register ScrollTrigger if available
+    // Hero undersidor
+    if (document.querySelector('.hero-sub')) {
+      gsap.from('.hero-sub .hero-badge', { opacity: 0, y: 16, duration: 0.6, ease: 'power3.out', delay: 0.15 });
+      gsap.from('.hero-sub h2',          { opacity: 0, y: 28, duration: 0.75, ease: 'power3.out', delay: 0.3 });
+      gsap.from('.hero-sub p',           { opacity: 0, y: 16, duration: 0.65, ease: 'power3.out', delay: 0.45 });
+    }
+ 
+    // ScrollTrigger-animationer
     if (typeof ScrollTrigger !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
  
-      // Trust bar
-      gsap.from('.trust-item', {
-        scrollTrigger: { trigger: '.trust', start: 'top 85%' },
-        opacity: 0, y: 30, stagger: 0.12, duration: 0.6, ease: 'power3.out'
-      });
+      // Trust-bar (startsida)
+      if (document.querySelector('.trust-item')) {
+        gsap.from('.trust-item', {
+          scrollTrigger: { trigger: '.trust', start: 'top 88%' },
+          opacity: 0, y: 30, stagger: 0.12, duration: 0.6, ease: 'power3.out'
+        });
+      }
  
-      // Cards
-      gsap.from('.card', {
-        scrollTrigger: { trigger: '.grid', start: 'top 85%' },
-        opacity: 0, y: 40, stagger: 0.12, duration: 0.65, ease: 'power3.out'
-      });
+      // Tjänstekort
+      if (document.querySelector('.card')) {
+        gsap.from('.card', {
+          scrollTrigger: { trigger: '.grid', start: 'top 88%' },
+          opacity: 0, y: 40, stagger: 0.12, duration: 0.65, ease: 'power3.out'
+        });
+      }
  
-      // Team members
-      gsap.from('.team-member', {
-        scrollTrigger: { trigger: '.team-grid', start: 'top 85%' },
-        opacity: 0, y: 40, stagger: 0.12, duration: 0.65, ease: 'power3.out'
-      });
+      if (document.querySelector('.team-member')) {
+        gsap.set('.team-member', { opacity: 0, y: 40 });
+        gsap.to('.team-member', {
+          scrollTrigger: { trigger: '.team-grid', start: 'top 88%' },
+          opacity: 1, y: 0, stagger: 0.15, duration: 0.7, ease: 'power3.out'
+        });
+      }
  
-      // Testimonials
-      gsap.from('.testimonial', {
-        scrollTrigger: { trigger: '.testimonials', start: 'top 85%' },
-        opacity: 0, y: 40, stagger: 0.15, duration: 0.7, ease: 'power3.out'
-      });
+      if (document.querySelector('.testimonial')) {
+        gsap.set('.testimonial', { opacity: 0, y: 40 });
+        gsap.to('.testimonial', {
+          scrollTrigger: { trigger: '.testimonials', start: 'top 88%' },
+          opacity: 1, y: 0, stagger: 0.18, duration: 0.75, ease: 'power3.out'
+        });
+      }
  
       // Service blocks
-      gsap.from('.service-block-content', {
-        scrollTrigger: { trigger: '.service-block', start: 'top 80%' },
-        opacity: 0, x: -30, duration: 0.7, ease: 'power3.out'
-      });
+      if (document.querySelector('.service-block-content')) {
+        gsap.from('.service-block-content', {
+          scrollTrigger: { trigger: '.service-block', start: 'top 82%' },
+          opacity: 0, x: -30, duration: 0.7, ease: 'power3.out'
+        });
+      }
     }
+ 
+  } else {
+    // Fallback om GSAP inte laddas – visa allt direkt
+    document.querySelectorAll('.team-member, .testimonial, .card, .trust-item, .fade-in').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
   }
  
   // ---------- Navbar Scroll Effect ----------
@@ -114,29 +138,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
  
-  // ---------- Contact Form ----------
+  // ---------- Kontaktformulär ----------
   const form = document.querySelector('.contact-form');
   if (form) {
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', () => {
       const btn = form.querySelector('.btn-submit');
       if (btn) {
         btn.textContent = 'Skickar...';
         btn.style.opacity = '0.7';
         btn.disabled = true;
-      }
-      // Formspree handles the actual submission
-      // Re-enable after 3s as fallback
-      setTimeout(() => {
-        if (btn) {
+        setTimeout(() => {
           btn.textContent = 'Skicka meddelande →';
           btn.style.opacity = '';
           btn.disabled = false;
-        }
-      }, 3000);
+        }, 3000);
+      }
     });
   }
  
-  // ---------- Active Nav Link ----------
+  // ---------- Aktiv nav-länk ----------
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(link => {
     const href = link.getAttribute('href');
@@ -146,3 +166,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
  
 });
+ 
