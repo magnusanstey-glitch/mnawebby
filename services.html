@@ -3,16 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Om oss - MNA Webbyrå</title>
+  <meta name="description" content="MNA Webbyrå tjänster – Webbutveckling, UX/UI Design och SEO i Malmö."/>
+  <title>Tjänster – MNA Webbyrå</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
-
+ 
 <nav>
-  <a href="index.html"><img src="Skärmavbild 2026-03-15 kl. 13.30.47.png" alt="MNA Webbyrå logga" class="logo"/></a>
+  <a href="index.html">
+    <img src="logo.png" alt="MNA Webbyrå" class="logo"/>
+  </a>
+  <button class="nav-toggle" aria-label="Öppna meny">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
     <a href="index.html">Hem</a>
     <a href="services.html">Tjänster</a>
@@ -21,54 +27,97 @@
     <a href="contact.html" class="btn-nav">Kontakt</a>
   </div>
 </nav>
-
-<section class="hero">
+ 
+<section class="hero-sub">
+  <div class="hero-badge">Vad vi erbjuder</div>
   <h1>Vi skapar digitala upplevelser</h1>
   <p>MNA-Webbyrå består av ett dedikerat team av webbutvecklare, designers och SEO-experter baserade i Malmö.</p>
 </section>
-
+ 
+<!-- SERVICE BLOCKS -->
+<div class="service-block fade-in">
+  <div class="service-block-visual">💻</div>
+  <div class="service-block-content">
+    <span>Tjänst 01</span>
+    <h2>Webbutveckling</h2>
+    <p>Vi bygger moderna, snabba och responsiva webbplatser med senaste tekniken. Oavsett om du behöver en enkel presentationssida eller ett komplext webbprojekt – vi har kompetensen.</p>
+    <ul class="feature-list">
+      <li>Responsiv design för alla enheter</li>
+      <li>Snabba laddningstider och optimerad kod</li>
+      <li>Shopify, WordPress & skräddarsydda lösningar</li>
+      <li>SEO-optimerad struktur från grunden</li>
+    </ul>
+  </div>
+</div>
+ 
+<div class="service-block fade-in">
+  <div class="service-block-visual">🎨</div>
+  <div class="service-block-content">
+    <span>Tjänst 02</span>
+    <h2>UX/UI Design</h2>
+    <p>Användarvänlig design som engagerar besökare och konverterar dem till kunder. Vi skapar gränssnitt som är både vackra och funktionella – med användaren i fokus.</p>
+    <ul class="feature-list">
+      <li>Användartester och UX-research</li>
+      <li>Wireframes och prototyper</li>
+      <li>Grafisk profil och varumärkesidentitet</li>
+      <li>Tillgänglig design (WCAG-standard)</li>
+    </ul>
+  </div>
+</div>
+ 
+<div class="service-block fade-in">
+  <div class="service-block-visual">📈</div>
+  <div class="service-block-content">
+    <span>Tjänst 03</span>
+    <h2>SEO</h2>
+    <p>Synlighet på Google som driver organisk trafik till din webbplats. Vi analyserar, optimerar och rapporterar – så att du alltid vet hur det går.</p>
+    <ul class="feature-list">
+      <li>Nyckelordsanalys och strategi</li>
+      <li>On-page och teknisk SEO</li>
+      <li>Länkbyggnad och innehållsstrategi</li>
+      <li>Månadsrapporter och uppföljning</li>
+    </ul>
+  </div>
+</div>
+ 
+<div class="divider"></div>
+ 
+<!-- Om varumärket -->
 <section class="section">
+  <span class="section-label">Vår filosofi</span>
   <h2>Skräddarsydda lösningar för ditt företag</h2>
-  <p>MNA-Webbyrå är en webbdesign- och utvecklingsfirma baserad i Malmö. Vi är specialiserade på webbutveckling, UX-design och SEO för att hjälpa företag och organisationer att skapa en stark och effektiv online-närvaro.</p>
-  <p>Vi strävar alltid efter att förstå våra kunders unika behov och mål för att skapa skräddarsydda lösningar som ger dem en konkurrenskraftig fördel på marknaden.</p>
-</section>
-
-<section class="section">
-  <h2>Vårt mål</h2>
-  <p>Vårt mål är att alltid leverera det bästa till våra kunder. Vi hjälper företag och organisationer att skapa moderna och användarvänliga webblösningar som genererar synlighet och framgång på nätet.</p>
-  <p><strong>M, N och A i MNA</strong> står för Magnus, Nove och Ali — tre passionerade experter som arbetar tillsammans för att skapa enastående digitala lösningar.</p>
-</section>
-
-<section class="section team">
-  <h2>Möt vårt team</h2>
-  <div class="team-grid">
-    <div class="member">
-      <img src="https://via.placeholder.com/150" alt="Nove"/>
-      <h3>Nove</h3>
-      <p>SEO ansvarig</p>
+  <p>MNA-Webbyrå är en webbdesign- och utvecklingsfirma baserad i Malmö. Vi strävar alltid efter att förstå våra kunders unika behov och mål för att skapa skräddarsydda lösningar som ger en konkurrenskraftig fördel.</p>
+  <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+    <div class="card fade-in" style="flex:1;min-width:220px;">
+      <div class="card-icon">🎯</div>
+      <h3>Resultatfokus</h3>
+      <p>Vi mäter framgång i faktiska resultat – fler besökare, fler kunder.</p>
     </div>
-    <div class="member">
-      <img src="https://via.placeholder.com/150" alt="Magnus"/>
-      <h3>Magnus</h3>
-      <p>Programmerare</p>
+    <div class="card fade-in" style="flex:1;min-width:220px;">
+      <div class="card-icon">🤝</div>
+      <h3>Nära samarbete</h3>
+      <p>Vi lyssnar på dina önskemål och håller dig uppdaterad genom hela processen.</p>
     </div>
-    <div class="member">
-      <img src="https://via.placeholder.com/150" alt="Ali"/>
-      <h3>Ali</h3>
-      <p>UX/UI ansvarig</p>
+    <div class="card fade-in" style="flex:1;min-width:220px;">
+      <div class="card-icon">⚡</div>
+      <h3>Snabb leverans</h3>
+      <p>Effektiva processer och tydliga deadlines – vi levererar i tid.</p>
     </div>
   </div>
 </section>
-
-<section class="section">
-  <h2>Vill du jobba med oss?</h2>
+ 
+<section class="cta-final">
+  <span class="section-label" style="display:block;margin-bottom:1rem;">Kom igång</span>
+  <h2>Redo att ta nästa steg?</h2>
   <p>Vi diskuterar alltid pris individuellt baserat på dina behov. Kontakta oss för en kostnadsfri offert.</p>
+  <a href="contact.html" class="btn-primary">Kontakta oss idag</a>
 </section>
-
+ 
 <footer>
-  <p>© MNA Webbyrå – Malmö | Gerlachgatan 6A, 212 19 Malmö | kontakt@kaizenflow.se | 072 517 30 24</p>
+  <p>© 2026 MNA Webbyrå – Malmö &nbsp;·&nbsp; <a href="mailto:kontakt@kaizenflow.se" style="color:var(--accent)">kontakt@kaizenflow.se</a></p>
 </footer>
-
+ 
 <script src="script.js"></script>
 </body>
-</html> 
+</html>
+ 
