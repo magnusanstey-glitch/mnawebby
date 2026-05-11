@@ -1,18 +1,26 @@
+
+
 <!DOCTYPE html>
 <html lang="sv">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kontakt - MNA Webbyrå</title>
+  <meta name="description" content="Kontakta MNA Webbyrå i Malmö – kostnadsfri offert för webbutveckling, design och SEO."/>
+  <title>Kontakt – MNA Webbyrå</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
-
+ 
 <nav>
-  <a href="index.html"><img src="Skärmavbild 2026-03-15 kl. 13.30.47.png" alt="MNA Webbyrå logga" class="logo"/></a>
+  <a href="index.html">
+    <img src="logo.png" alt="MNA Webbyrå" class="logo"/>
+  </a>
+  <button class="nav-toggle" aria-label="Öppna meny">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
     <a href="index.html">Hem</a>
     <a href="services.html">Tjänster</a>
@@ -21,44 +29,145 @@
     <a href="contact.html" class="btn-nav">Kontakt</a>
   </div>
 </nav>
-
-<section class="hero">
-  <h1>Kontakta oss</h1>
-  <p>Berätta om ditt projekt</p>
+ 
+<section class="hero-sub">
+  <div class="hero-badge">Kostnadsfri offert</div>
+  <h1>Kontakta MNA-Webbyrå</h1>
+  <p>Vi finns i Malmö och hjälper företag i hela Sverige med webbutveckling, design och SEO.</p>
 </section>
-
-<section class="section contact-page">
-  <h2>Kontakta MNA-Webbyrå</h2>
-  <p>Vi finns i Malmö och hjälper företag i hela Sverige med webbutveckling, design och SEO. Vi diskuterar alltid pris individuellt baserat på dina behov.</p>
-  <div class="contact-container">
-    <form action="https://formspree.io/f/mnjlvrly" method="POST"> 
-  <input type="text" name="name" placeholder="Ditt namn" required>
-  <input type="email" name="email" placeholder="din@epost.se" required>
-  <textarea name="message" placeholder="Berätta om ditt projekt..." required></textarea>
-  <button type="submit">Skicka</button>
-</form> 
-    <div class="contact-info">
-      <div class="info-item">
-        <h3>Adress</h3>
-        <p>Gerlachgatan 6A, 212 19 Malmö</p>
+ 
+<section class="section" style="padding-top:2rem;max-width:1100px;">
+  <div class="contact-layout">
+ 
+    <!-- FORMULÄR -->
+    <div class="form-card fade-in">
+      <h3>Skicka ett meddelande</h3>
+      <p>Vi svarar vanligtvis inom 24 timmar på vardagar.</p>
+ 
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/mnjlvrly"
+        method="POST"
+      >
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Ditt namn</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Anna Svensson"
+              required
+              autocomplete="name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">E-postadress</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="din@epost.se"
+              required
+              autocomplete="email"
+            />
+          </div>
+        </div>
+ 
+        <div class="form-group">
+          <label for="phone">Telefon (valfritt)</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="070 000 00 00"
+            autocomplete="tel"
+          />
+        </div>
+ 
+        <div class="form-group">
+          <label for="service">Vilken tjänst är du intresserad av?</label>
+          <select id="service" name="service">
+            <option value="" disabled selected>Välj tjänst...</option>
+            <option value="webbutveckling">Webbutveckling</option>
+            <option value="ux-design">UX/UI Design</option>
+            <option value="seo">SEO</option>
+            <option value="allt">Flera tjänster / Vet ej</option>
+          </select>
+        </div>
+ 
+        <div class="form-group">
+          <label for="message">Berätta om ditt projekt</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Beskriv vad du behöver hjälp med, din budget och eventuella deadlines..."
+            required
+          ></textarea>
+        </div>
+ 
+        <!-- Honeypot (spam-skydd) -->
+        <input type="text" name="_gotcha" style="display:none" />
+ 
+        <button type="submit" class="btn-submit">
+          Skicka meddelande →
+        </button>
+      </form>
+    </div>
+ 
+    <!-- KONTAKTINFO -->
+    <div class="contact-info-stack fade-in">
+      <h3>Kontaktuppgifter</h3>
+ 
+      <div class="info-card">
+        <div class="info-icon">📍</div>
+        <div class="info-card-text">
+          <h4>Adress</h4>
+          <p>Gerlachgatan 6A, 212 19 Malmö</p>
+        </div>
       </div>
-      <div class="info-item">
-        <h3>Telefon</h3>
-        <p>072 517 30 24</p>
+ 
+      <div class="info-card">
+        <div class="info-icon">📞</div>
+        <div class="info-card-text">
+          <h4>Telefon</h4>
+          <a href="tel:+46725173024">072 517 30 24</a>
+        </div>
       </div>
-      <div class="info-item">
-        <h3>E-post</h3>
-        <p>kontakt@kaizenflow.se</p>
+ 
+      <div class="info-card">
+        <div class="info-icon">✉️</div>
+        <div class="info-card-text">
+          <h4>E-post</h4>
+          <a href="mailto:kontakt@kaizenflow.se">kontakt@kaizenflow.se</a>
+        </div>
+      </div>
+ 
+      <div class="info-card">
+        <div class="info-icon">🕐</div>
+        <div class="info-card-text">
+          <h4>Svarstid</h4>
+          <p>Vanligtvis inom 24 timmar</p>
+        </div>
+      </div>
+ 
+      <div class="info-card">
+        <div class="info-icon">💬</div>
+        <div class="info-card-text">
+          <h4>Offert</h4>
+          <p>Alltid kostnadsfri och utan bindning</p>
+        </div>
       </div>
     </div>
+ 
   </div>
 </section>
-
+ 
 <footer>
-  <p>© MNA Webbyrå – Malmö</p>
+  <p>© 2026 MNA Webbyrå – Malmö &nbsp;·&nbsp; <a href="mailto:kontakt@kaizenflow.se" style="color:var(--accent)">kontakt@kaizenflow.se</a></p>
 </footer>
-
+ 
 <script src="script.js"></script>
 </body>
-</html>
+</html> 
 
